@@ -51,7 +51,7 @@ function ReportSubmission() {
         <div className="report-form-container">
             <h2 className="report-form-title">Submit a Report</h2>
             <form onSubmit={handleSubmit}>
-                <div className="input-group">
+                <div className="input-group glass">
                     <label className="input-label">Description</label>
                     <textarea
                         value={description}

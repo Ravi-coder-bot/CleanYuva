@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
+import bulb from '../../assets/bulb.png'
 
 function Dashboard() {
     const [reports, setReports] = useState([]);
@@ -37,12 +38,14 @@ function Dashboard() {
     // Colors for zones
     const zoneColors = ['green', 'yellow', 'red'];
 
-    return (< div className='dashboard'>
+    return (< div  >
+        <img src={bulb} alt="" className='background'/>
         <Navbar />
-    <div className="dashboard-container">
-        <button className='nav-sign dash-report' onClick={() => navigate('/report')}>Report Your Area</button>
-        <button className='nav-sign dash-admin' onClick={() => navigate('/admin')}>Admin Pannel</button>
-            <h2 className="dashboard-title">Dashboard</h2>
+    <div className="dashboard-container glass">
+        <div className='dash-nav'><button className='nav-sign dash-report' onClick={() => navigate('/report')}>Report Your Area</button>
+        <button className='nav-sign dash-admin' onClick={() => navigate('/admin')}>Admin Pannel</button></div>
+        
+            <h2 className="dashboard-title">EcoMap</h2>
             <MapContainer
                 center={[28.7041, 77.1025]} // Default: Delhi
                 zoom={12}

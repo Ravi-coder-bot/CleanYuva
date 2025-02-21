@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminPanel.css';
+import layer from '../../assets/layer.png'
+import Navbar from '@/components/Navbar/Navbar';
 
 function AdminPanel() {
     const [reports, setReports] = useState([]);
@@ -33,7 +35,11 @@ function AdminPanel() {
     };
 
     return (
-        <div className="admin-container">
+        <div className="admin-panel">
+            <Navbar></Navbar>
+            
+            <img src={layer} alt="" className='background'/>
+            <div className="admin-container ">
             <h2 className="admin-title">Admin Panel</h2>
             <table className="admin-table">
                 <thead>
@@ -85,6 +91,8 @@ function AdminPanel() {
                 </tbody>
             </table>
         </div>
+        </div>
+        
     );
 }
 

@@ -6,10 +6,21 @@ import image7 from   '../../assets/image7.png'
 import image8 from   '../../assets/image8.png'
 import './Footer.css'
 import Background from '../Background/Background'
+import React, { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 
 
 const Footer = () => {
+    const location = useLocation();
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    if (location.hash === '#target' && targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
+    }
+  }, [location]);
+
     const[subs,setSubs]= useState(true)
     function toggle(){
         setSubs(!subs)
@@ -18,6 +29,7 @@ const Footer = () => {
   
   return (
     <div className='footer'>
+        <div ref={targetRef} style={{ marginTop: '20px' }}></div>
         <div className='footer-black'>
         <div className='footer-logo'>Clean-Yuva</div>
         <p className='para'>Clean-Yuva is an innovative app that uses cutting-edge technology</p>
