@@ -3,10 +3,12 @@ import axios from "axios";
 import "./AdminPanel.css";
 import layer from "../../assets/layer.png";
 import Navbar from "@/components/Navbar/Navbar";
+import MapComponent from "@/components/MapComponent/MapComponent";
 
 function AdminPanel() {
     const [reports, setReports] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [selectedLocation, setSelectedLocation] = useState(null);
 
     useEffect(() => {
         const fetchReports = async () => {
@@ -77,8 +79,13 @@ function AdminPanel() {
                                     />
                                 </td>
                                 <td>
-                                    {report.location.latitude.toFixed(2)}, {report.location.longitude.toFixed(2)}
-                                </td>
+                                <button 
+                                    onClick={() => setSelectedLocation(report.location)}
+                                    className="btn-map"
+                                >
+                                    Show on Map
+                                </button>
+                            </td>
                                 <td>{report.status || "Pending"}</td>
                                 <td>
                                     {loading ? (
@@ -110,6 +117,16 @@ function AdminPanel() {
                         ))}
                     </tbody>
                 </table>
+                {selectedLocation && (
+                <div className="map-container">
+                    <h3>Location Map</h3>
+                    <MapComponent 
+                        latitude={selectedLocation.latitude} 
+                        longitude={selectedLocation.longitude} 
+                    />
+                    <button onClick={() => setSelectedLocation(null)}>Close</button>
+                </div>
+            )}
             </div>
         </div>
     );

@@ -24,9 +24,9 @@ const Leaderboard = () => {
               <th>Name</th>
               <th>Activity Score</th>
               <th>Reports📝</th>
-              <th>Appts Set 🤝</th>
-              <th>Emails 📩</th>
-              <th>New Leads 📈</th>
+              <th>Gained Reward 🤝</th>
+              <th>Approved 📩</th>
+              <th> sucess📈</th>
             </tr>
           </thead>
           <tbody>
