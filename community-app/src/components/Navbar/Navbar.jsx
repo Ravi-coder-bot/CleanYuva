@@ -19,7 +19,7 @@ const Navbar = () => {
         <ul  className='nav-menu'>
             <li className='nav-item' onClick={goToTargetComponent}>About</li>
             <li onClick={()=>navigate('/leaderboard')} className='nav-item'>LeaderBoard</li>
-            <li className='nav-item'>Enquiry</li>
+            <li onClick={()=>navigate('/chatbot')} className='nav-item'>Enquiry</li>
             <li className='nav-item'>Contact us</li>
             <li onClick={()=>navigate('/admin')} className='nav-item'>Admin Pannel</li>
             <li onClick={handleGetStarted} className='nav-item'>

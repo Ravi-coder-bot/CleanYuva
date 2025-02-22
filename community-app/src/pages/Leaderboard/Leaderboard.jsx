@@ -1,6 +1,7 @@
 import React from "react";
 import "./Leaderboard.css"; // Import CSS
 import bulb from "../../assets/bulb.png"
+import Navbar from "@/components/Navbar/Navbar";
 
 const salesData = [
   { rank: "1ST", name: "LAUREN WILLIAMS", score: 92, calls: 70, appts: 1, emails: 40, leads: 5, image: "https://via.placeholder.com/40" },
@@ -14,6 +15,7 @@ const Leaderboard = () => {
   return (
     <div className="leaderboard ">
         <img src={bulb} alt="" className="background"/>
+        <Navbar/>
          <div className="leaderboard-container ">
       <h1 className="title">Reports Leaderboard</h1>
       <div className="table-container">

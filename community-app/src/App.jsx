@@ -6,6 +6,7 @@ import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import AdminPanel from './pages/AdminPanel/AdminPanel';
 import Leaderboard from './pages/Leaderboard/Leaderboard';
+import Chatbot from './pages/Chatbot/Chatbot';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path='/chatbot' element={<Chatbot />}/>
       </Routes>
     </div>
   );
