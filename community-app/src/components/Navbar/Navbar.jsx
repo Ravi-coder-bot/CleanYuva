@@ -15,10 +15,10 @@ const Navbar = () => {
 
   return (
     <div className='nav'>
-        <div className='nav-logo'>Clean-Yuva</div>
+        <div onClick={()=>navigate('/')} className='nav-logo'>Clean-Yuva</div>
         <ul  className='nav-menu'>
             <li className='nav-item' onClick={goToTargetComponent}>About</li>
-            <li className='nav-item'>LeaderBoard</li>
+            <li onClick={()=>navigate('/leaderboard')} className='nav-item'>LeaderBoard</li>
             <li className='nav-item'>Enquiry</li>
             <li className='nav-item'>Contact us</li>
             <li onClick={()=>navigate('/admin')} className='nav-item'>Admin Pannel</li>

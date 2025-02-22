@@ -17,6 +17,18 @@ router.put('/update-status/:id', async (req, res) => {
     }
 });
 
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const report = await Report.findByIdAndDelete(req.params.id);
+        if (!report) {
+            return res.status(404).json({ error: 'Report not found' });
+        }
+        res.status(200).json({ message: 'Report deleted successfully', report });
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to delete report' });
+    }
+});
+
 // Update zone development level
 router.put('/update-zone', async (req, res) => {
     const { latitude, longitude, development } = req.body; // development: 0 (green), 1 (yellow), 2 (red)

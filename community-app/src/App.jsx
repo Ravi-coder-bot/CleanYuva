@@ -5,6 +5,7 @@ import ReportSubmission from './pages/ReportSubmission/ReportSubmission';
 import LandingPage from './pages/LandingPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 import AdminPanel from './pages/AdminPanel/AdminPanel';
+import Leaderboard from './pages/Leaderboard/Leaderboard';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/report" element={<ReportSubmission />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </div>
   );
