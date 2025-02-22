@@ -41,7 +41,7 @@ const Chatbot = () => {
       <Navbar />
         <div className="chatbot-container">
       {/* Header */}
-      <div className="chatbot-header">Chatbot</div>
+      <div className="chatbot-header">Ask CleanYuva Assistant</div>
 
       {/* Chat Messages */}
       <div className="chatbot-messages">
